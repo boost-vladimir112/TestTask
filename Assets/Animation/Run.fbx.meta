@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1c1d1d176ea9bf4d9dcf4a2e068c003
+guid: e6f57240237085843aab5e509ad2249a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -9,6 +9,9 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
+  - first:
+      74: -3780516532778130023
+    second: mixamo.com (1)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -44,18 +47,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
-      takeName: Take 001
+      name: mixamo.com (1)
+      takeName: mixamo.com
       internalID: 0
-      firstFrame: 1
-      lastFrame: 150
+      firstFrame: 0
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -71,7 +74,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: mixamo.com
       takeName: mixamo.com
@@ -84,7 +87,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -428,23 +431,23 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Run(Clone)
+    - name: Run (1)(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Character_Male_Face_01
-      parentName: Run(Clone)
+      parentName: Run (1)(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Character_Female_Face_01
-      parentName: Run(Clone)
+      parentName: Run (1)(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Root
-      parentName: Run(Clone)
+      parentName: Run (1)(Clone)
       position: {x: 0.053430613, y: 0.06094467, z: -0.61623234}
       rotation: {x: -0.00000004656613, y: 0.0000000029103826, z: -0.0000000029103826,
         w: 1}

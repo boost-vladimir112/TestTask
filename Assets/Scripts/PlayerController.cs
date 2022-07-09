@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool isRun;
     NavMeshAgent agent;
     public Transform[] waypoints;
     int waypointIndex;
@@ -19,16 +20,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    RaycastHit hit;
-        //    if(Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition),out hit))
-        //    {
-        //        agent.SetDestination(hit.point);
-        //    }
-        //}
+        
         if(Vector3.Distance(transform.position, target) < 1)
         {
+            isRun = true;
             IterateWaypointIndex();
             UpdateDestination();
         }
