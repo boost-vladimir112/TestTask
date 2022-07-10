@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartGame : MonoBehaviour
+public class Animation : MonoBehaviour
 {
-    
+    private Animator anim;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        anim.SetBool("isRun", true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            Time.timeScale = 1;
-        }
+        
     }
     private void Awake()
     {
-        Time.timeScale = 0;
+        
     }
 }
-
