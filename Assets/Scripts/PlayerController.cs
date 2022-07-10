@@ -47,16 +47,11 @@ public class PlayerController : MonoBehaviour
     }
     void IterateWaypointIndex()
     {
-            
             waypointIndex++;
             Debug.Log("New point" + waypointIndex);
             GetComponent<Animation>().IdleAnim();
             _fight = true;
-            
 
-
-        
-        
         if (waypointIndex == waypoints.Length)
         {
             waypointIndex = 0;
