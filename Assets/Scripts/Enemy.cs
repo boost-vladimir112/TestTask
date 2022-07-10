@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     public int health = 3;
+    [SerializeField]
+    private Text hpText;
     void Start()
     {
         
@@ -17,6 +20,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        hpText.text = health.ToString() + "HP";
     }
     public void TakeDamage(int damage)
     {
