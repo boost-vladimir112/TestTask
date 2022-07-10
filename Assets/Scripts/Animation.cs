@@ -12,21 +12,16 @@ public class Animation : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetBool("isRun", true);
         _isRun = anim.GetBool("isRun");
-
-
     }
     public bool isRun
     {
-        get { return _isRun; }
-        set { _isRun = anim.GetBool("isRun"); }
+        get { return anim.GetBool("isRun"); }
+        set { anim.SetBool("isRun",_isRun); }
     }
     // Update is called once per frame
     void Update()
     {
         
     }
-    private void Awake()
-    {
-        
-    }
+
 }
