@@ -18,6 +18,10 @@ public class Animation : MonoBehaviour
         get { return anim.GetBool("isRun"); }
         set { anim.SetBool("isRun",_isRun); }
     }
+    public void IdleAnim()
+    {
+        anim.SetBool("isRun", false);
+    }
     // Update is called once per frame
     void Update()
     {

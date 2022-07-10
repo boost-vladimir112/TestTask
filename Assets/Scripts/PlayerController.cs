@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool _fight;
 
     NavMeshAgent agent;
     public Transform[] waypoints;
@@ -13,7 +14,8 @@ public class PlayerController : MonoBehaviour
     Vector3 target;
  
     void Start()
-    {
+    {   
+        _fight = false;
         agent = GetComponent<NavMeshAgent>();
         UpdateDestination();
     }
@@ -34,17 +36,26 @@ public class PlayerController : MonoBehaviour
     }
     void UpdateDestination()
     {
-        //bool _isRun; 
-        //_isRun = false;
-        //GetComponent<Animation>().isRun = _isRun;
-        target = waypoints[waypointIndex].position;
-        agent.SetDestination(target);
-    
+        
+        if (_fight == false)
+        {
+            target = waypoints[waypointIndex].position;
+            agent.SetDestination(target);
+        }
+
+
     }
     void IterateWaypointIndex()
     {
-  
-        waypointIndex++;
+            
+            waypointIndex++;
+            Debug.Log("New point" + waypointIndex);
+            GetComponent<Animation>().IdleAnim();
+            _fight = true;
+            
+
+
+        
         
         if (waypointIndex == waypoints.Length)
         {
