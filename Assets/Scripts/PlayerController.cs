@@ -24,30 +24,34 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Debug.Log(GetComponent<Animation>().isRun);
-        //if (GetComponent<Animation>().isRun)
-        
-            if (Vector3.Distance(transform.position, target) < 1)
-            {
-           
-                IterateWaypointIndex();
-            if(_fight == false)
-                UpdateDestination();
-            else
-                {
-                    GetComponent<EnemyChecker>().StopFight();
-                }
 
-            }
-    
+        if (Vector3.Distance(transform.position, target) < 1 )
+        {
+            IterateWaypointIndex();
+            UpdateDestination();
+        }
+        if(_fight)
+        {
+            agent.isStopped = true;
+            GetComponent<Animation>().IdleAnim();
+        }
+        else
+        {
+            agent.isStopped = false;
+            GetComponent<Animation>().RunAnim();
+        }
+      
     }
     void UpdateDestination()
     {
             target = waypoints[waypointIndex].position;
             agent.SetDestination(target);
+            
     }
     void IterateWaypointIndex()
     {
             waypointIndex++;
+            
             Debug.Log("New point" + waypointIndex);
 
         if (waypointIndex == waypoints.Length)
