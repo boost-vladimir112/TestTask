@@ -13,6 +13,7 @@ public class Animation : MonoBehaviour
         anim.SetBool("isRun", true);
         _isRun = anim.GetBool("isRun");
     }
+
     //public bool isRun
     //{
     //    get { return anim.GetBool("isRun"); }

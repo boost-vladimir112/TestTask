@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField]
     public float speed = 65f;
-    Rigidbody rb;
+    [SerializeField]
     public float lifeTimer = 10f;
+
+    Rigidbody rb;
+   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
