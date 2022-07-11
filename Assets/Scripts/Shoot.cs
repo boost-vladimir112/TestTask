@@ -29,8 +29,9 @@ public class Shoot : MonoBehaviour
             {
                 GameObject bulletObj = Instantiate(bulletPrefab);
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
                 bulletObj.transform.position =  hit.point;
-                bulletObj.transform.forward = posBullet.transform.forward + hit.point;
+                bulletObj.transform.forward = posBullet.transform.forward ;
             }
             
 
