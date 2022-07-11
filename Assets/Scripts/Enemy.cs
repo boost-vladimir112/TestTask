@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
     Animator anim;
     [SerializeField]
     BoxCollider boxCollider;
-    
+
+    public bool isDead = false;
 
     public int health = 3;
     [SerializeField]
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
+            isDead = true;
             anim.enabled = false;
             Ragdoll();
             Destroy(boxCollider);

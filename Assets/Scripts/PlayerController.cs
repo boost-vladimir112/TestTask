@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
             IterateWaypointIndex();
             UpdateDestination();
         }
-        if(_fight)
+
+        if (_fight)
         {
             agent.isStopped = true;
             GetComponent<Animation>().IdleAnim();
@@ -38,8 +39,11 @@ public class PlayerController : MonoBehaviour
             agent.isStopped = false;
             GetComponent<Animation>().RunAnim();
         }
-      
+ 
     }
+
+
+
     void UpdateDestination()
     {
             target = waypoints[waypointIndex].position;
@@ -49,8 +53,6 @@ public class PlayerController : MonoBehaviour
     void IterateWaypointIndex()
     {
             waypointIndex++;
-            _fight = true;
-            
             Debug.Log("New point" + waypointIndex);
 
         if (waypointIndex == waypoints.Length)
