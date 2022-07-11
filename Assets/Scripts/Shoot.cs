@@ -19,7 +19,7 @@ public class Shoot : MonoBehaviour
             Shooting();
         }
     }
-    void Shooting()
+   public void Shooting()
     {
         if (Input.anyKeyDown)
         {

@@ -23,8 +23,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(GetComponent<Animation>().isRun);
-
         if (Vector3.Distance(transform.position, target) < 1 )
         {
             IterateWaypointIndex();
@@ -51,6 +49,7 @@ public class PlayerController : MonoBehaviour
     void IterateWaypointIndex()
     {
             waypointIndex++;
+            _fight = true;
             
             Debug.Log("New point" + waypointIndex);
 
@@ -59,11 +58,6 @@ public class PlayerController : MonoBehaviour
             waypointIndex = 0;
             SceneManager.LoadScene(0);
         }
-    }
-   public void StartFight()
-    {
-        GetComponent<Animation>().IdleAnim();
-
     }
 
 }
