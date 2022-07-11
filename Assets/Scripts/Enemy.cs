@@ -28,16 +28,13 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
-
             anim.enabled = false;
             Ragdoll();
             Destroy(boxCollider);
             Destroy(hpText);
-
             //Destroy(gameObject);
         }
         hpText.text = health.ToString() + "HP";
-    
     }
     public void TakeDamage(int damage)
     {

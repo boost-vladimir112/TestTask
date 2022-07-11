@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    [SerializeField]
+    private Camera mainCamera;
     public GameObject bulletPrefab;
     public GameObject posBullet;
 
@@ -14,7 +16,9 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.anyKeyDown && Time.time > nextTimeToFire)
+        
+        Debug.DrawRay(transform.position, transform.forward * 100f, Color.yellow);
+        if (Input.anyKeyDown && Time.time > nextTimeToFire)
         {
             nextTimeToFire = Time.time +1f / fireRate;
             Shooting();
@@ -22,8 +26,22 @@ public class Shoot : MonoBehaviour
     }
     void Shooting()
     {
-        GameObject bulletObj = Instantiate(bulletPrefab);
-        bulletObj.transform.position = posBullet.transform.position + posBullet.transform.forward;
-        bulletObj.transform.forward = posBullet.transform.forward;
+        if (Input.anyKeyDown)
+        {
+            RaycastHit hit;
+            
+            if (Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition),out hit))
+            {
+                GameObject bulletObj = Instantiate(bulletPrefab);
+                Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                bulletObj.transform.position =  hit.point;
+                bulletObj.transform.forward = posBullet.transform.forward;
+            }
+            
+
+            //bulletObj.transform.position = posBullet.transform.position;
+            //bulletObj.transform.forward = posBullet.transform.forward;
+        }
+
     }
 }

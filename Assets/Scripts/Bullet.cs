@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 65f;
     Rigidbody rb;
-    public float lifeTimer = 2f;
+    public float lifeTimer = 10f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
