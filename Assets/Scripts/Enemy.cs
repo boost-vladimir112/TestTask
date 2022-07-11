@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     Animator anim;
+    [SerializeField]
+    BoxCollider boxCollider;
+    
 
     public int health = 3;
     [SerializeField]
@@ -18,14 +21,23 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+
+        
+    }
+    private void FixedUpdate()
+    {
+        if (health <= 0)
         {
+
             anim.enabled = false;
             Ragdoll();
-            
+            Destroy(boxCollider);
+            Destroy(hpText);
+
             //Destroy(gameObject);
         }
         hpText.text = health.ToString() + "HP";
+    
     }
     public void TakeDamage(int damage)
     {
